@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./styles.css";
-import { FaBedPulse } from "react-icons/fa6";
 
 export default function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -55,14 +54,23 @@ export default function TicTacToe() {
     );
   };
 
+  let statusText = "";
+  let statusColor = "";
+  if (winner) {
+    statusText = `Player ${winner} wins.`;
+    statusColor = "green";
+  } else if (isDraw) {
+    statusText = "It's a draw!";
+    statusColor = "orange";
+  } else {
+    statusText = `Next Player: ${isNext ? "X" : "O"}`;
+    statusColor = "blue";
+  }
+
   return (
     <div className="container">
-      <div className="status">
-        {winner
-          ? `Player ${winner} wins.`
-          : isDraw
-          ? "It's a draw!"
-          : `Next Player: ${isNext ? "X" : "O"}`}
+      <div className="status" style={{ color: statusColor }}>
+        {statusText}
       </div>
       <div className="row">
         {renderCell(0)}
