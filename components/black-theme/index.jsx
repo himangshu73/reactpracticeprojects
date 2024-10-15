@@ -1,0 +1,20 @@
+import useLocalStorage from "./useLocalStorage";
+import "./theme.css";
+
+export default function BlackTheme() {
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
+
+  function handleToggleTheme() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
+  console.log(theme);
+
+  return (
+    <div className="blacktheme" data-theme={theme}>
+      <div className="container">
+        <h2>Hello world</h2>
+        <button onClick={handleToggleTheme}>Change Theme</button>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+  margin: 20px auto;
+}
+.image-slider {
+  position: relative;
+}
+.image-slider img {
+  width: auto;
+  height: 500px;
+  margin: 0 auto;
+}
+.active-slide {
+  display: block;
+}
+
+.hidden-slide {
+  display: none;
+}
+
+.slide-number-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.slide-number {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: goldenrod;
+}
+.slide-number.active {
+  background-color: green;
+  color: white;
+  font-weight: bolder;
+}
+.slide-number:hover {
+  background-color: green;
+  font-weight: bolder;
+  color: white;
+}
